@@ -12,7 +12,9 @@ fun sum_list (xs : int list) =
 (* x=5  [5,4,3,2,1,0] *)
 (* x=0  [0] *)
 fun countdown (x : int) = 
-
+  if x = 0
+  then [0]
+  else x::countdown(x-1)
 
 
 
@@ -20,5 +22,7 @@ fun countdown (x : int) =
 (* x:[2] y:[3,4,5,6] => [2,3,4,5,6] *)
 (* x:[] y:[3,4,5,6] => [3,4,5,6] *)
 fun append (xs : int list, ys : int list) = 
-
+  if null xs
+  then ys
+  else hd xs::append(tl xs, ys)
 

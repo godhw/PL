@@ -18,4 +18,5 @@ fun ret_f():int*int->int =
 
 ret_f()(4, 5)
 
-
+(* same with this *)
+mult(4 5)
