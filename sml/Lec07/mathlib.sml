@@ -6,7 +6,8 @@ sig
     val fact : int -> int
     val half: real -> real 
     val half_pi : real 
-    val doubler : int -> int 
+    val doubler : int  -> int 
+ (* val ddu : 'a -> 'a *)
 end
 
 
@@ -22,5 +23,7 @@ struct
 
     val half_pi = Math.pi/2.0
 
-(*   fun doubler (y) = y + y *)
+    fun doubler (y) = y + y
+
+ (* fun ddu x = x *)
 end

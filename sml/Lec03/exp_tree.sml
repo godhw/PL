@@ -21,11 +21,11 @@ val ifExpr = If(false, Add(Constant 10, Constant 11),
 
 fun eval(e: exp):int =
    case e of
-     Constant(i) => 
-   | Negate(e1) => 
-   | Add(e1, e2) => 
-   | Multiply(e1, e2) => 
-   | If(b, e1, e2) => 
+     Constant(i) => i 
+   | Negate(e1) => ~ (eval (e2))
+   | Add(e1, e2) => eval(e1) + eval(e2)
+   | Multiply(e1, e2) => eval(e1) * eval(e2)
+   | If(b, e1, e2) => if b then eval(e1) else eval(e2)
 
 
 (* max_constant: exp -> int *)

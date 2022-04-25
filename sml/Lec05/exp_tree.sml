@@ -30,8 +30,8 @@ fun all (test, e) =
    case e of 
         Constant i      => test i 
       | Negate e2       => all(test, e2)
-      | Add(e1,e2)      => all(test, e1) andalso all(test, e1) 
-      | Multiply(e1,e2) => all(test, e1) andalso all(test, e1)
+      | Add(e1,e2)      => all(test, e1) andalso all(test, e2) 
+      | Multiply(e1,e2) => all(test, e1) andalso all(test, e2)
 
 (* another version of all_even *)
 fun all_even(e) = all(fn i => (i mod 2)=0, e)
@@ -40,10 +40,9 @@ fun all_odd(e) = all(fn i => (i mod 2)=1, e)
 
 fun any (test, e) =
    case e of 
-        Constant i      => 
-      | Negate e2       => 
-      | Add(e1,e2)      => 
-      | Multiply(e1,e2) => 
+        Constant i      => test i 
+      | Negate e2       => any(test, e2)
+      | Add(e1,e2)      => any(test, e1) orelse any(test, e2)
+      | Multiply(e1,e2) => any(test, e1) orelse any(test, e2)
 
-fun any_even(e) =
-
+fun any_even(e) = any(fn i => (i mod 2) = 0, e)

@@ -1,6 +1,6 @@
 
 (* examples of making functions tail-recursive *)
-
+(* same with sum_rev.sml *)
 fun sum1 xs =
     case xs of
         [] => 0

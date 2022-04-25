@@ -31,6 +31,11 @@ fun good_max (xs : int list) =
 (* maxlist: int list * exception -> int *)
 fun maxlist (xs: int list) =
   case xs of
+       [] => raise MyUndesirableCondition
+     | x::[] => x
+     | x::xs' => let val max = maxlist(xs')
+                 in if x < max then max else x
+                 end
 
 
 (*

@@ -9,8 +9,8 @@ fun sign_my_val() =
 
 fun add_or_mult (f, v) =
     if f 7
-    then 	         (* function for mult by v *)
-    else 	         (* function for add by v *)
+    then fn x => x + v (* function for mult by v *)
+    else fn x => x * v (* function for add by v *)
 
 val func1 = add_or_mult(fn (x) => (x mod 7) = 0, 2);
 
